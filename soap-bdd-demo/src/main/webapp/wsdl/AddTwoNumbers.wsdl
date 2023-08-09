@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.soap.bdd.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.soap.bdd.com" xmlns:intf="http://service.soap.bdd.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.soap.bdd.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addNumbers">
+    <complexType>
+     <sequence>
+      <element name="num1" type="xsd:int"/>
+      <element name="num2" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="addNumbersReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addNumbersResponse">
+
+      <wsdl:part element="impl:addNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNumbersRequest">
+
+      <wsdl:part element="impl:addNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AddTwoNumbers">
+
+      <wsdl:operation name="addNumbers">
+
+         <wsdl:input message="impl:addNumbersRequest" name="addNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addNumbersResponse" name="addNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AddTwoNumbersSoapBinding" type="impl:AddTwoNumbers">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AddTwoNumbersService">
+
+      <wsdl:port binding="impl:AddTwoNumbersSoapBinding" name="AddTwoNumbers">
+
+         <wsdlsoap:address location="http://localhost:9090/soap-bdd-demo/services/AddTwoNumbers"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

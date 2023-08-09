@@ -1,0 +1,9 @@
+com\bdd\soap\stubs\package-info.class
+com\bdd\soap\implementation\CucumberIntegration.class
+com\bdd\soap\stubs\AddTwoNumbers.class
+com\bdd\soap\stubs\ObjectFactory.class
+com\bdd\soap\stubs\AddNumbersResponse.class
+com\bdd\soap\stubs\AddTwoNumbersService.class
+com\bdd\soap\implementation\RunnerClass.class
+com\bdd\soap\stubs\AddNumbers.class
+com\bdd\soap\implementation\StepDefinitions.class
